@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: linebot
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python main.py"
+    envVars:
+      - key: LINE_TOKEN
+        sync: false
+      - key: LINE_SECRET
+        sync: false
