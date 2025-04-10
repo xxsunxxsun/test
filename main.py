@@ -41,8 +41,12 @@ SCOPE = [
     'https://spreadsheets.google.com/feeds',
     'https://www.googleapis.com/auth/drive'
 ]
-CREDS = ServiceAccountCredentials.from_json_keyfile_name(
-    'iconic-medium-452908-m1-9142065925d1.json', SCOPE)
+import io
+credentials_json = os.getenv("GOOGLE_CREDENTIALS")
+credentials_dict = json.loads(credentials_json)
+creds_file = io.StringIO(json.dumps(credentials_dict))
+CREDS = ServiceAccountCredentials.from_json_keyfile(creds_file, SCOPE)
+
 client = gspread.authorize(CREDS)
 sheet = client.open('糾察隊').sheet1
 
