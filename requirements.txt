@@ -1,6 +1,7 @@
 Flask
-line-bot-sdk==3.16.3
 gspread
 oauth2client
-schedule
+requests
 python-dotenv
+schedule
+line-bot-sdk==3.16.3
