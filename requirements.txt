@@ -1,7 +1,0 @@
-Flask
-gspread
-oauth2client
-requests
-python-dotenv
-schedule
-line-bot-sdk==3.16.3
